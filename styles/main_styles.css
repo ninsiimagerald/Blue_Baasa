@@ -1201,7 +1201,7 @@ section {
 }
 
 .footer_about_text p {
-    color: #b2b2b2;
+    color: #f5f0f0;
 }
 
 .footer_about_list {
@@ -1237,7 +1237,7 @@ section {
 .footer_about_list li span {
     font-size: 14px;
     font-weight: 500;
-    color: #b2b2b2;
+    color: #f5f0f0;
     padding-left: 10px;
 }
 
@@ -1265,7 +1265,7 @@ section {
 .footer_links ul li a {
     font-size: 14px;
     font-weight: 500;
-    color: #b2b2b2;
+    color: #f5f0f0;
 }
 
 .footer_news ul {
@@ -1275,7 +1275,7 @@ section {
 .footer_news_title a {
     font-size: 15px;
     font-weight: 500;
-    color: #b2b2b2;
+    color: #f5f0f0;
 }
 
 .footer_news_date {
