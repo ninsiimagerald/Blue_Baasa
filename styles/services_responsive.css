@@ -317,7 +317,10 @@
         font-size: 20px;
     }
     .home {
-        height: 230px;
+        height: 273px;
+    }
+    .home img{
+        height: 200px;
     }
     .home_container {
         bottom: 47px;
@@ -384,6 +387,12 @@
     .logo_text {
         font-size: 16px;
     }
+    .home {
+        height: 273px;
+    }
+    .home img{
+        height: 200px;
+    }
 }
 
 
@@ -413,6 +422,12 @@
     }
     .logo_text {
         font-size: 16px;
+    }
+    .home {
+        height: 273px;
+    }
+    .home img{
+        height: 200px;
     }
 }
 
@@ -447,6 +462,12 @@
     .logo_text {
         font-size: 16px;
     }
+    .home {
+        height: 273px;
+    }
+    .home img{
+        height: 200px;
+    }
 }
 
 
@@ -476,5 +497,11 @@
     }
     .logo_text {
         font-size: 16px;
+    }
+    .home {
+        height: 273px;
+    }
+    .home img{
+        height: 200px;
     }
 }
