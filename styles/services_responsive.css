@@ -228,7 +228,7 @@
         padding-left: 0;
     }
     .header.scrolled .logo_container {
-        top: 50px;
+        top: 0;
     }
     .header.scrolled .logo_container {
         height: 80px;
@@ -319,7 +319,7 @@
     .home {
         height: 273px;
     }
-    .home img{
+    .home img {
         height: 200px;
     }
     .home_container {
@@ -390,7 +390,7 @@
     .home {
         height: 273px;
     }
-    .home img{
+    .home img {
         height: 200px;
     }
 }
@@ -415,7 +415,7 @@
         padding-left: 0;
     }
     .header.scrolled .logo_container {
-        top: 50px;
+        top: 0;
     }
     .header.scrolled .logo_container {
         height: 80px;
@@ -426,7 +426,7 @@
     .home {
         height: 273px;
     }
-    .home img{
+    .home img {
         height: 200px;
     }
 }
@@ -465,7 +465,7 @@
     .home {
         height: 273px;
     }
-    .home img{
+    .home img {
         height: 200px;
     }
 }
@@ -501,7 +501,7 @@
     .home {
         height: 273px;
     }
-    .home img{
+    .home img {
         height: 200px;
     }
 }
