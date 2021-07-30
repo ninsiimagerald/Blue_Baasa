@@ -447,7 +447,7 @@ section {
 }
 
 .header.scrolled .logo_container {
-    top: 48px;
+    top: 0;
     height: 120px;
 }
 
