@@ -347,6 +347,12 @@
     .cta_content h2 {
         font-size: 28px;
     }
+    .home {
+        height: 273px;
+    }
+    .home img {
+        height: 200px;
+    }
 }
 
 
