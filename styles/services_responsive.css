@@ -178,14 +178,14 @@
 
 @media only screen and (max-width: 880px) {
     .logo_container {
-        height: 120px;
+        height: 60px;
     }
     .logo {
         margin-top: 9px;
     }
     .logo_container {
         width: 270px;
-        height: 80px;
+        height: 60px;
     }
     .logo_content {
         padding-left: 0;
@@ -194,7 +194,7 @@
         top: 0;
     }
     .header.scrolled .logo_container {
-        height: 80px;
+        height: 60px;
     }
 }
 
@@ -215,14 +215,14 @@
         display: none;
     }
     .logo_container {
-        height: 120px;
+        height: 60px;
     }
     .logo {
         margin-top: 9px;
     }
     .logo_container {
         width: 270px;
-        height: 80px;
+        height: 60px;
     }
     .logo_content {
         padding-left: 0;
@@ -231,7 +231,7 @@
         top: 0;
     }
     .header.scrolled .logo_container {
-        height: 80px;
+        height: 60px;
     }
     .logo_text {
         font-size: 16px;
@@ -284,7 +284,7 @@
     }
     .logo_container {
         width: 270px;
-        height: 80px;
+        height: 60px;
     }
     .logo_content {
         padding-left: 0;
@@ -366,14 +366,14 @@
 
 @media only screen and (max-width: 539px) {
     .logo_container {
-        height: 120px;
+        height: 60px;
     }
     .logo {
         margin-top: 9px;
     }
     .logo_container {
         width: 270px;
-        height: 80px;
+        height: 60px;
     }
     .logo_content {
         padding-left: 0;
@@ -382,7 +382,7 @@
         top: 0;
     }
     .header.scrolled .logo_container {
-        height: 80px;
+        height: 60px;
     }
     .logo_text {
         font-size: 16px;
@@ -402,14 +402,14 @@
 
 @media only screen and (max-width: 480px) {
     .logo_container {
-        height: 120px;
+        height: 60px;
     }
     .logo {
         margin-top: 9px;
     }
     .logo_container {
         width: 270px;
-        height: 80px;
+        height: 60px;
     }
     .logo_content {
         padding-left: 0;
@@ -418,7 +418,7 @@
         top: 0;
     }
     .header.scrolled .logo_container {
-        height: 80px;
+        height: 60px;
     }
     .logo_text {
         font-size: 16px;
@@ -441,33 +441,33 @@
         font-size: 28px;
     }
     .logo_container {
-        height: 120px;
-    }
-    .logo {
-        margin-top: 9px;
-    }
-    .logo_container {
-        width: 270px;
-        height: 80px;
-    }
-    .logo_content {
-        padding-left: 0;
-    }
-    .header.scrolled .logo_container {
-        top: 0;
-    }
-    .header.scrolled .logo_container {
-        height: 80px;
-    }
-    .logo_text {
-        font-size: 16px;
-    }
-    .home {
-        height: 273px;
-    }
-    .home img {
-        height: 200px;
-    }
+      height: 60px;
+  }
+  .logo {
+      margin-top: 9px;
+  }
+  .logo_container {
+      width: 270px;
+      height: 60px;
+  }
+  .logo_content {
+      padding-left: 0;
+  }
+  .header.scrolled .logo_container {
+      top: 0;
+  }
+  .header.scrolled .logo_container {
+      height: 60px;
+  }
+  .logo_text {
+      font-size: 16px;
+  }
+  .home {
+      height: 273px;
+  }
+  .home img {
+      height: 200px;
+  }
 }
 
 
@@ -476,32 +476,32 @@
 ************/
 
 @media only screen and (max-width: 400px) {
-    .logo_container {
-        height: 120px;
-    }
-    .logo {
-        margin-top: 9px;
-    }
-    .logo_container {
-        width: 270px;
-        height: 80px;
-    }
-    .logo_content {
-        padding-left: 0;
-    }
-    .header.scrolled .logo_container {
-        top: 0;
-    }
-    .header.scrolled .logo_container {
-        height: 80px;
-    }
-    .logo_text {
-        font-size: 16px;
-    }
-    .home {
-        height: 273px;
-    }
-    .home img {
-        height: 200px;
-    }
+  .logo_container {
+    height: 60px;
+}
+.logo {
+    margin-top: 9px;
+}
+.logo_container {
+    width: 270px;
+    height: 60px;
+}
+.logo_content {
+    padding-left: 0;
+}
+.header.scrolled .logo_container {
+    top: 0;
+}
+.header.scrolled .logo_container {
+    height: 60px;
+}
+.logo_text {
+    font-size: 16px;
+}
+.home {
+    height: 273px;
+}
+.home img {
+    height: 200px;
+}
 }
