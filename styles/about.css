@@ -100,11 +100,11 @@ a:link {
 }
 
 a:hover {
-    color: #97c845 !important;
+    color: #2ebe3d !important;
 }
 
 ::selection {
-    color: #97c845;
+    color: #2ebe3d;
 }
 
 p::selection {}
@@ -255,7 +255,7 @@ section {
     bottom: 0;
     width: 100%;
     height: 3px;
-    background: #97c845;
+    background: #2ebe3d;
     content: '';
     z-index: 0;
     -webkit-transition: all 400ms cubic-bezier(.33, .68, .59, .99);
@@ -304,7 +304,7 @@ section {
     top: 0;
     width: 54px;
     height: 3px;
-    background: #97c845;
+    background: #2ebe3d;
     content: '';
 }
 
@@ -470,7 +470,7 @@ section {
     bottom: 0;
     width: 100%;
     height: 4px;
-    background: #97c845;
+    background: #2ebe3d;
 }
 
 .logo {
@@ -478,7 +478,7 @@ section {
 }
 
 .logo span {
-    color: #97c845;
+    color: #2ebe3d;
 }
 
 .logo_container a .logo:hover {
@@ -496,7 +496,7 @@ section {
     display: inline-block;
     width: 23px;
     height: 23px;
-    background: #97c845;
+    background: #2ebe3d;
     color: #FFFFFF;
     font-size: 24px;
     line-height: 23px;
@@ -645,7 +645,7 @@ section {
 
 .menu_close_container:hover .menu_close,
 .menu_close_container:hover .menu_close::after {
-    background: #97c845;
+    background: #2ebe3d;
 }
 
 .menu_extra {
@@ -698,7 +698,7 @@ section {
 }
 
 .home_title span {
-    color: #97c845;
+    color: #2ebe3d;
 }
 
 .breadcrumbs {
@@ -795,7 +795,7 @@ section {
     bottom: 0;
     width: 100%;
     height: 4px;
-    background: #97c845;
+    background: #2ebe3d;
     content: '';
 }
 
@@ -849,7 +849,7 @@ section {
 .box_phone {
     font-size: 30px;
     font-weight: 400;
-    color: #97c845;
+    color: #2ebe3d;
     margin-top: 20px;
 }
 
@@ -899,7 +899,7 @@ section {
 .test_icon {
     width: 45px;
     height: 45px;
-    background: #97c845;
+    background: #2ebe3d;
 }
 
 .test_text {
@@ -938,7 +938,7 @@ section {
 }
 
 .test_author_name span {
-    color: #97c845;
+    color: #2ebe3d;
     font-style: italic;
 }
 
@@ -1059,7 +1059,7 @@ section {
     left: 0;
     width: 100%;
     height: 4px;
-    background: #97c845;
+    background: #2ebe3d;
     content: '';
 }
 
@@ -1100,7 +1100,7 @@ section {
     display: inline-block;
     width: 31px;
     height: 31px;
-    background: #97c845;
+    background: #2ebe3d;
     text-align: center;
     vertical-align: middle;
 }
@@ -1165,7 +1165,7 @@ section {
 .footer_news_date {
     font-size: 14px;
     font-weight: 500;
-    color: #97c845;
+    color: #2ebe3d;
     margin-top: 7px;
 }
 
@@ -1202,7 +1202,7 @@ section {
 }
 
 .footer_social ul li a i {
-    color: #97c845;
+    color: #2ebe3d;
     padding: 5px;
     font-size: 14px;
     -webkit-transition: all 200ms ease;
