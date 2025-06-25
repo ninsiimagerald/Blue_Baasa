@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCare Health Club Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e3f2fd; 
+        }
+        .brand-navy { color: #0d47a1; }
+        .brand-blue { color: #1976d2; }
+        .brand-light-blue { color: #42a5f5; }
+        .brand-accent-cyan { color: #00acc1; }
+        .brand-accent-yellow { color: #ffc107; }
+
+        .bg-brand-navy { background-color: #0d47a1; }
+        .bg-brand-blue { background-color: #1976d2; }
+        .bg-brand-light-blue { background-color: #42a5f5; }
+        .bg-brand-accent-cyan { background-color: #00acc1; }
+        
+        .border-brand-navy { border-color: #0d47a1; }
+        .border-brand-blue { border-color: #1976d2; }
+        .border-brand-light-blue { border-color: #42a5f5; }
+        .border-brand-accent-cyan { border-color: #00acc1; }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+                max-height: 400px;
+            }
+        }
+        
+        .flow-arrow::after {
+            content: '▼';
+            font-size: 2rem;
+            color: #1976d2;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .flow-arrow-horizontal::after {
+            content: '►';
+            font-size: 2rem;
+            color: #1976d2;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <main class="container mx-auto p-4 md:p-8 max-w-5xl">
+        
+        <header class="text-center mb-12 md:mb-16">
+            <h1 class="text-4xl md:text-6xl font-black brand-navy">MyCare Health Club</h1>
+            <p class="text-lg md:text-xl text-gray-600 mt-2">Your partner in navigating healthcare costs in Uganda.</p>
+            <p class="text-sm brand-blue font-semibold mt-1">A Blue Baasa Financial Services (U) Ltd Initiative</p>
+        </header>
+
+        <section id="challenge" class="mb-12 md:mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold brand-navy text-center mb-8">The Healthcare Challenge</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-brand-light-blue">
+                    <p class="text-5xl md:text-6xl font-black brand-light-blue">35%</p>
+                    <p class="text-lg font-semibold brand-navy mt-2">Out-of-Pocket</p>
+                    <p class="text-gray-600 mt-1">Is the average portion of healthcare costs paid directly by families, even with "free" public services.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-brand-blue">
+                    <p class="text-5xl md:text-6xl font-black brand-blue">7 in 10</p>
+                    <p class="text-lg font-semibold brand-navy mt-2">Face Financial Barriers</p>
+                    <p class="text-gray-600 mt-1">Patients may delay or avoid necessary care due to costs like transport or non-stocked medication.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-brand-navy">
+                    <p class="text-5xl md:text-6xl font-black brand-navy">48 Hours</p>
+                    <p class="text-lg font-semibold brand-navy mt-2">To Find Funds</p>
+                    <p class="text-gray-600 mt-1">Is the critical window families have to find money for an unexpected health crisis, often leading to debt.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="mb-12 md:mb-20 bg-brand-navy text-white rounded-2xl p-8 md:p-12 shadow-2xl">
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Introducing the Solution</h2>
+                    <p class="text-lg text-gray-200 mb-6">The MyCare Health Club provides a powerful safety net. We believe that owning your health story is the first step, and community support is the key to overcoming financial barriers to care.</p>
+                    <div class="bg-brand-blue p-6 rounded-xl">
+                        <h3 class="font-bold text-xl mb-2 brand-accent-yellow">The MyCare Health Journal</h3>
+                        <p class="text-gray-100">The foundation of your membership. It's more than a book—it's your personal health passport, designed to empower you in conversations with your doctor and help you track your health journey.</p>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center">
+                     <div class="w-64 h-80 bg-white rounded-lg shadow-xl p-4 flex flex-col justify-between transform rotate-3">
+                         <div class="border-b-2 pb-2">
+                            <h4 class="font-bold text-lg brand-navy">MyCare Health Journal</h4>
+                            <p class="text-sm brand-blue">Your Personal Health Passport</p>
+                        </div>
+                        <div class="text-left space-y-2 text-gray-700">
+                            <p class="text-sm">✓ Consultation Notes</p>
+                            <p class="text-sm">✓ Medication Tracker</p>
+                            <p class="text-sm">✓ Symptom Log</p>
+                            <p class="text-sm">✓ Appointment Schedule</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-black text-3xl brand-blue">B</p>
+                            <p class="text-xs font-semibold brand-navy">A Blue Baasa Initiative</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tiers" class="mb-12 md:mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold brand-navy text-center mb-8">How It Works: Choose Your Path</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-gray-200 flex flex-col">
+                    <h3 class="text-2xl font-bold brand-navy mb-2">MyCare</h3>
+                    <p class="font-semibold text-lg brand-blue mb-4">Standard Membership</p>
+                    <p class="text-gray-600 mb-6 flex-grow">Get started by acquiring the official MyCare Health Journal. This is the perfect first step to taking control of your health records.</p>
+                    <ul class="space-y-3 text-gray-700 flex-grow">
+                        <li class="flex items-start"><span class="brand-blue font-bold mr-2 text-xl">✓</span><span>Receive the official MyCare Health Journal.</span></li>
+                        <li class="flex items-start"><span class="brand-blue font-bold mr-2 text-xl">✓</span><span>Access general health information and support from our team.</span></li>
+                        <li class="flex items-start"><span class="brand-blue font-bold mr-2 text-xl">✓</span><span>Become eligible to upgrade to MyCare Plus at any time.</span></li>
+                    </ul>
+                    <div class="bg-gray-100 text-center p-4 rounded-lg mt-6">
+                        <p class="font-semibold text-gray-700">Cost: A simple, one-time journal registration fee.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-blue p-8 rounded-xl shadow-2xl text-white border-4 border-brand-accent-cyan flex flex-col">
+                    <h3 class="text-2xl font-bold text-white mb-2">MyCare Plus</h3>
+                    <p class="font-semibold text-lg brand-accent-yellow mb-4">Premium Membership</p>
+                    <p class="text-gray-200 mb-6 flex-grow">Unlock the full power of community support with access to our Community Health Fund, providing real financial protection when you need it most.</p>
+                     <ul class="space-y-3 text-gray-100 flex-grow">
+                        <li class="flex items-start"><span class="brand-accent-yellow font-bold mr-2 text-xl">✓</span><span>Includes all Standard MyCare benefits.</span></li>
+                        <li class="flex items-start"><span class="brand-accent-yellow font-bold mr-2 text-xl">✓</span><span class="font-semibold">Access the Community Health Fund to help pay your bills.</span></li>
+                        <li class="flex items-start"><span class="brand-accent-yellow font-bold mr-2 text-xl">✓</span><span>Receive proactive Care Coordination Support (reminders & follow-ups).</span></li>
+                    </ul>
+                    <div class="bg-brand-navy text-center p-4 rounded-lg mt-6">
+                        <p class="font-semibold text-white">Cost: A single, affordable annual subscription.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fund" class="mb-12 md:mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold brand-navy text-center mb-8">The Power of MyCare Plus: The Community Health Fund</h2>
+            <div class="bg-white rounded-xl shadow-lg p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left">
+                     <h3 class="text-2xl font-bold brand-navy mb-4">How the 80/20 Co-Pay Works</h3>
+                     <p class="text-gray-600 mb-4">When a MyCare Plus member has an approved health cost, they don't face it alone. The community steps in to cover the vast majority of the bill.</p>
+                     <p class="text-gray-600">This makes even large, unexpected bills manageable and ensures you can always afford the care you need.</p>
+                     <div class="mt-6 bg-blue-50 p-6 rounded-lg border-l-4 border-brand-blue">
+                        <p class="font-bold text-lg brand-blue">Example: A 100,000 UGX Bill</p>
+                        <p class="text-gray-700 mt-2">The member is only responsible for their 20% co-payment of <span class="font-bold">20,000 UGX.</span> The Community Fund covers the remaining <span class="font-bold">80,000 UGX.</span></p>
+                     </div>
+                </div>
+                <div>
+                    <div class="chart-container">
+                        <canvas id="copayChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey" class="mb-12 md:mb-20">
+             <h2 class="text-3xl md:text-4xl font-bold brand-navy text-center mb-10">Your Journey with MyCare</h2>
+             <div class="flex flex-col md:flex-row justify-around items-center text-center space-y-4 md:space-y-0 md:space-x-4">
+                 <div class="flex flex-col items-center">
+                    <div class="bg-white w-32 h-32 rounded-full flex items-center justify-center shadow-lg border-2 border-brand-blue">
+                        <span class="text-5xl brand-navy">1</span>
+                    </div>
+                    <p class="font-semibold brand-navy mt-3 w-40">Enroll & Get Your Journal</p>
+                 </div>
+                 <div class="flow-arrow md:hidden"></div>
+                 <div class="hidden md:flex items-center flow-arrow-horizontal"></div>
+                  <div class="flex flex-col items-center">
+                    <div class="bg-white w-32 h-32 rounded-full flex items-center justify-center shadow-lg border-2 border-brand-blue">
+                        <span class="text-5xl brand-navy">2</span>
+                    </div>
+                    <p class="font-semibold brand-navy mt-3 w-40">Choose Your Plan (MyCare or MyCare Plus)</p>
+                 </div>
+                 <div class="flow-arrow md:hidden"></div>
+                 <div class="hidden md:flex items-center flow-arrow-horizontal"></div>
+                 <div class="flex flex-col items-center">
+                    <div class="bg-white w-32 h-32 rounded-full flex items-center justify-center shadow-lg border-2 border-brand-blue">
+                        <span class="text-5xl brand-navy">3</span>
+                    </div>
+                    <p class="font-semibold brand-navy mt-3 w-40">Access Support & Financial Protection</p>
+                 </div>
+                 <div class="flow-arrow md:hidden"></div>
+                 <div class="hidden md:flex items-center flow-arrow-horizontal"></div>
+                 <div class="flex flex-col items-center">
+                    <div class="bg-white w-32 h-32 rounded-full flex items-center justify-center shadow-lg border-2 border-brand-blue">
+                        <span class="text-5xl brand-navy">4</span>
+                    </div>
+                    <p class="font-semibold brand-navy mt-3 w-40">Live with Peace of Mind</p>
+                 </div>
+             </div>
+        </section>
+        
+        <footer class="text-center pt-8 border-t-2 border-gray-300">
+             <h2 class="text-2xl font-bold brand-navy mb-4">Ready to Join?</h2>
+             <p class="text-gray-600 max-w-2xl mx-auto mb-6">Take the first step towards health security. Ask about the MyCare Health Club at a participating clinic canteen or pharmacy, or contact Blue Baasa today.</p>
+             <p class="font-semibold brand-blue">info@bluebaasa.com | 0787394119 / 0754898609</p>
+        </footer>
+
+    </main>
+    
+    <script>
+        const ctx = document.getElementById('copayChart');
+
+        const data = {
+            labels: ['Community Fund Pays (80%)', 'Member Co-Pay (20%)'],
+            datasets: [{
+                label: 'Cost Sharing',
+                data: [80, 20],
+                backgroundColor: [
+                    '#1976d2', // brand-blue
+                    '#ffc107'  // brand-accent-yellow
+                ],
+                borderColor: [
+                    '#FFFFFF',
+                    '#FFFFFF'
+                ],
+                borderWidth: 4,
+                hoverOffset: 8
+            }]
+        };
+
+        const config = {
+            type: 'doughnut',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '60%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: {
+                                size: 14,
+                                family: 'Inter',
+                            },
+                            color: '#0d47a1', // brand-navy
+                            padding: 20
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        },
+                        bodyFont: {
+                            size: 14,
+                            family: 'Inter',
+                        },
+                        titleFont: {
+                            size: 16,
+                            family: 'Inter',
+                            weight: 'bold',
+                        },
+                        padding: 12,
+                        backgroundColor: '#0d47a1' // brand-navy
+                    }
+                }
+            }
+        };
+
+        new Chart(ctx, config);
+    </script>
+</body>
+</html>
