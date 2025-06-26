@@ -6,26 +6,596 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/png" href="images/favicon.png" />
-    <meta name="description" content="Light MediCare">
+    <meta name="description" content="Blue Baasa - Healthcare Financing">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
-    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-    <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-    <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+    
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-207181668-1">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Custom Styles -->
+    <style>
+        /*********************************
+        2. Body and some general stuff
+        *********************************/
 
-  gtag('config', 'UA-207181668-1');
-</script>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+            text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            background: #FFFFFF;
+            color: #696969;
+        }
+
+        p {
+            line-height: 2;
+        }
+
+        a, a:hover, a:visited, a:active, a:link {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .section_title h2 {
+            font-size: 30px;
+            font-weight: 500;
+            color: #232323;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section_title::before {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 54px;
+            height: 3px;
+            background: #2ebe3d;
+            content: '';
+        }
+        
+        .text-center .section_title::before {
+             left: 50%;
+             transform: translateX(-50%);
+        }
+
+        .section_title.section_title_light h2,
+        .section_title.section_title_light::before {
+            color: #FFFFFF;
+        }
+        
+        .button {
+            display: inline-block;
+            height: 51px;
+            background: #1c6cd6;
+            position: relative;
+            overflow: hidden;
+        }
+        .button a {
+            display: block;
+            line-height: 51px;
+            font-size: 14px;
+            font-weight: 900;
+            color: #FFFFFF;
+            padding: 0 40px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .button::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            background: #2ebe3d;
+            transition: all 400ms cubic-bezier(.33, .68, .59, .99);
+        }
+        .button:hover::after {
+            height: 100%;
+        }
+        .button:hover a {
+            color: #FFFFFF !important;
+        }
+
+        .trans_200 { transition: all 200ms ease; }
+        .trans_400 { transition: all 400ms ease; }
+
+        /*********************************
+        3. Header
+        *********************************/
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 200;
+            background: transparent;
+            transition: all .4s ease;
+        }
+        
+        .header.scrolled {
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header.scrolled .top_bar {
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .header.scrolled .header_content {
+            height: 80px;
+        }
+        
+        .header.scrolled .logo_container {
+            height: 80px;
+            box-shadow: none;
+        }
+        
+        .header.scrolled .logo_content {
+            padding: 10px 20px;
+            border: none;
+        }
+
+        /* 3.1 Top Bar */
+        .top_bar {
+            width: 100%;
+            background: #1c6cd6;
+            height: 48px;
+            transition: all .4s ease;
+        }
+
+        .top_bar_content {
+            height: 100%;
+            color: #fff;
+            font-size: 14px;
+        }
+        .emergencies {
+            background: #ff0030;
+            height: 100%;
+            padding: 0 30px;
+            font-weight: 700;
+        }
+
+        /* 3.2 Header Content */
+        .header_container {
+            width: 100%;
+        }
+
+        .header_content {
+            height: 103px;
+            display: flex;
+            align-items: center;
+            transition: all .4s ease;
+        }
+        
+        .main_nav {
+            margin-right: 15px;
+        }
+
+        .main_nav ul li {
+            display: inline-block;
+        }
+
+        .main_nav ul li:not(:first-child) {
+            margin-left: 32px;
+        }
+        
+        .main_nav ul li a {
+            font-size: 16px;
+            font-weight: 500;
+            color: #323232;
+            transition: color 200ms ease;
+        }
+        
+        .main_nav ul li a:hover, .main_nav ul li.active a {
+            color: #1c6cd6;
+        }
+
+        .hamburger { display: none; cursor: pointer; }
+        .hamburger i { font-size: 24px; color: #272727; }
+
+        /* 3.3 Logo */
+        .logo_container {
+            position: absolute;
+            top: 0;
+            left: 15px; /* Aligns with container padding */
+            width: 250px;
+            height: 151px; /* Top Bar (48) + Header (103) */
+            background: #FFFFFF;
+            box-shadow: 0px 10px 29px rgba(0, 0, 0, 0.09);
+            z-index: 10;
+            transition: all .4s ease;
+        }
+        
+        .logo_content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            border-bottom: 4px solid #2ebe3d;
+        }
+
+        .logo_content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /*********************************
+        4. Menu (Mobile)
+        *********************************/
+        .menu_container {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 999;
+            transition: right 0.6s ease;
+            visibility: hidden;
+        }
+
+        .menu_container.active {
+            right: 0;
+            visibility: visible;
+        }
+
+        .menu_close_container {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            cursor: pointer;
+            width: 21px;
+            height: 21px;
+        }
+        .menu_close {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .menu_close::before, .menu_close::after {
+            content: '';
+            position: absolute;
+            top: 9px;
+            left: 0;
+            width: 21px;
+            height: 3px;
+            background: #3a3a3a;
+            transition: all 200ms ease;
+        }
+        .menu_close::before { transform: rotate(45deg); }
+        .menu_close::after { transform: rotate(-45deg); }
+        .menu_close_container:hover .menu_close::before,
+        .menu_close_container:hover .menu_close::after {
+            background: #2ebe3d;
+        }
+        
+        .menu_inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+        }
+        .menu_list li:not(:last-child) { margin-bottom: 10px; }
+        .menu_list li a { font-size: 24px; font-weight: 700; color: #272727; }
+        .menu_list li a:hover { color: #1c6cd6; }
+        .menu_extra { margin-top: 40px; }
+        .menu_appointment a { font-size: 14px; color: #1c6cd6; font-weight: 700; }
+        .menu_emergencies { font-size: 14px; color: #272727; margin-top: 10px; }
+
+
+        /*********************************
+        5. Home
+        *********************************/
+        .home {
+            width: 100%;
+            height: 700px;
+        }
+
+        .home_slider_container { width: 100%; height: 100%; }
+        
+        .home_slider .owl-item, .home_slider_background {
+            height: 100%;
+        }
+
+        .home_slider_background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        /*********************************
+        6. Boxes
+        *********************************/
+        .boxes {
+            width: 100%;
+            padding: 0 15px 50px 15px;
+            margin-top: -100px; /* Pulls boxes up */
+            z-index: 10;
+            position: relative;
+        }
+        
+        .box {
+            width: 100%;
+            background: #1c6cd6;
+            color: #fff;
+            padding: 30px;
+            box-shadow: 0px 10px 29px rgba(0, 0, 0, 0.15);
+            transition: all 200ms ease;
+            position: relative;
+            border-bottom: 4px solid #2ebe3d;
+        }
+        
+        .box:hover {
+            box-shadow: 0px 15px 49px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .box_icon {
+            width: 37px;
+            height: 37px;
+        }
+        
+        .box_title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #FFFFFF;
+            margin-top: 15px;
+        }
+
+        .box_phone {
+            font-size: 24px;
+            font-weight: 500;
+            color: #FFFFFF;
+            margin-top: 15px;
+        }
+        
+        .working_hours { background: #fff; color: #232323; }
+        .working_hours .box_title { color: #1c6cd6; }
+        .working_hours .box_icon img { filter: invert(33%) sepia(87%) saturate(1519%) hue-rotate(200deg) brightness(91%) contrast(91%); } /* Colorize icon */
+        
+        .box_emergency { background: #f5f7fa; color: #232323;}
+        .box_emergency .box_title { color: #2ebe3d; }
+        .box_emergency .box_phone { color: #1c6cd6; }
+
+        /*********************************
+        7. About
+        *********************************/
+        .about {
+            width: 100%;
+            padding: 100px 0;
+        }
+        .about_text { margin-top: 30px; }
+        .about_button { margin-top: 40px; }
+        .about_image img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        
+        /*********************************
+        8. Departments
+        *********************************/
+        .departments {
+            padding: 100px 0;
+            background: #f5f7fa;
+        }
+        .departments_row { margin-top: 70px; }
+        .dept {
+            background: #FFFFFF;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.05);
+            border-radius: 5px;
+            overflow: hidden;
+            height: 100%;
+            border-bottom: 4px solid #2ebe3d;
+        }
+        .dept_image img { width: 100%; }
+        .dept_content { padding: 30px; }
+        .dept_title {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #232323;
+        }
+        .dept_subtitle {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        /*********************************
+        9. Services
+        *********************************/
+        .services {
+            padding: 100px 0 70px 0;
+        }
+
+        .services_row { margin-top: 70px; }
+        
+        .service_col {
+            margin-bottom: 30px;
+        }
+
+        .service {
+            width: 100%;
+            height: 100%;
+            background: #f5f7fa;
+            padding: 40px;
+            border-radius: 5px;
+            position: relative;
+            transition: all 400ms ease;
+        }
+
+        .service:hover {
+            background: #1c6cd6;
+            color: #FFFFFF;
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .service::after {
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4px;
+            background: #2ebe3d;
+            content: '';
+            opacity: 0;
+            transition: all 400ms ease;
+        }
+        .service:hover::after { opacity: 1; }
+
+        .service_icon {
+            width: 61px;
+            height: 61px;
+            margin: 0 auto;
+        }
+        
+        .service .svg path { fill: #2ebe3d; transition: all 400ms ease; }
+        .service:hover .svg path { fill: #FFFFFF; }
+
+        .service_title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #232323;
+            margin-top: 30px;
+            transition: all 400ms ease;
+        }
+
+        .service_text { margin-top: 15px; }
+        .service_text p { color: #696969; transition: all 400ms ease; }
+        .service:hover .service_title, .service:hover .service_text p {
+            color: #FFFFFF;
+        }
+        
+        /*********************************
+        11. Footer
+        *********************************/
+        .footer {
+            background: #151621;
+            color: #a5a5a5;
+        }
+        .footer_container {
+            padding: 100px 0 50px 0;
+        }
+        .footer_logo_container img {
+            max-width: 150px;
+        }
+        .footer_about_text { margin-top: 20px; }
+        .footer_about_list { margin-top: 20px; }
+        .footer_about_list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .footer_about_icon {
+            width: 31px;
+            height: 31px;
+            background: #2ebe3d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .footer_about_icon img {
+            width: 16px;
+            height: auto;
+        }
+        .footer_about_list li span { padding-left: 15px; }
+
+        .footer_title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 30px;
+        }
+        
+        .footer_links ul li:not(:last-child) { margin-bottom: 15px; }
+        .footer_links ul li a:hover { color: #2ebe3d; }
+        
+        .footer_social a {
+            color: #a5a5a5;
+            font-size: 20px;
+        }
+        .footer_social a:not(:last-child) {
+            margin-right: 20px;
+        }
+        .footer_social a:hover {
+            color: #2ebe3d;
+        }
+
+        .copyright {
+            background: #020523;
+            padding: 20px 0;
+        }
+        .copyright_content {
+            font-size: 14px;
+            color: #97979c;
+        }
+        
+        /*********************************
+        12. Responsive
+        *********************************/
+        
+        @media (max-width: 991px) {
+            .main_nav { display: none; }
+            .hamburger { display: block; margin-left: auto; }
+            .logo_container { left: 50%; transform: translateX(-50%); width: 180px; height: 100px; }
+            .header.scrolled .logo_container { height: 70px; }
+            .header_content, .header.scrolled .header_content { height: 80px; }
+            .home { height: 500px; }
+            .boxes { margin-top: -80px; }
+            .box_col { margin-bottom: 30px; }
+            .about_content { text-align: center; }
+            .about_image { position: relative; margin-top: 40px; }
+            .section_title { text-align: center; }
+            .section_title::before { left: 50%; transform: translateX(-50%); }
+            .footer_col { margin-bottom: 40px; text-align: center;}
+            .footer_about_list li { justify-content: center; }
+            .copyright_content { text-align: center; }
+        }
+
+        @media (max-width: 575px) {
+            .home { height: 400px; }
+            h2, .section_title h2 { font-size: 24px; }
+        }
+
+    </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-207181668-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-207181668-1');
+    </script>
 </head>
 
 <body>
@@ -33,19 +603,15 @@
     <div class="super_container">
 
         <!-- Header -->
-
-        <header class="header trans_200">
-
+        <header class="header trans_400">
             <!-- Top Bar -->
             <div class="top_bar">
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
-                              <!-- <div class="top_bar_item"><a href="#">FAQ</a></div> -->
-                                <div class="emergencies  d-flex flex-row align-items-center justify-content-start ml-auto">Call us: +256 754 898 609</div>
+                            <div class="top_bar_content d-flex flex-row align-items-center justify-content-end">
+                                <div class="emergencies d-flex flex-row align-items-center justify-content-center">Call us: +256 754 898 609</div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -56,399 +622,263 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                                <nav class="main_nav ml-auto">
+                            <div class="header_content d-flex flex-row align-items-center justify-content-end">
+                                <!-- Logo -->
+                                <div class="logo_container">
+                                    <a href="#">
+                                        <div class="logo_content">
+                                            <img src="images/logo.png" alt="Blue Baasa Logo">
+                                        </div>
+                                    </a>
+                                </div>
+                                <nav class="main_nav">
                                     <ul>
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About us</a></li>
-                                        <li><a href="services.html">Services</a></li>
-                                        <li><a href="MyCare.html">MyCare</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li class="active"><a href="#">Home</a></li>
+                                        <li><a href="#">About us</a></li>
+                                        <li><a href="#">Services</a></li>
+                                        <li><a href="#">MyCare</a></li>
+                                        <li><a href="#">Contact</a></li>
                                     </ul>
                                 </nav>
-                                <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                                <div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Logo -->
-            <div class="logo_container_outer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div class="logo_container">
-                                <a href="#">
-                                    <div class="logo_content d-flex flex-column align-items-start justify-content-center">
-                                        <!--<div class="logo_line"></div> -->
-                                        <!-- <div class="logo d-flex flex-row align-items-center justify-content-center">
-                                            <div class="logo_text">LM</div>
-                                            <div class="logo_box">C</div> -->
-                                            <div><img src="images/logo.png" alt="favicon" width="100%"></div>
-                                            <!-- <p style="color: #1c6cd6; font-weight: bold; text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;"> <em>Erisa Road, Kyebando, Kampala - Uganda</em></p> -->
-                                        </div>
-                                        <!-- <div class="logo_sub">In safe hands</div> -->
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </header>
-        <!-- Menu -->
 
-        <div class="menu_container menu_mm ">
-
-            <!-- Menu Close Button -->
-            <div class="menu_close_container ">
-                <div class="menu_close "></div>
+        <!-- Menu (for mobile) -->
+        <div class="menu_container">
+            <div class="menu_close_container">
+                <div class="menu_close"></div>
             </div>
-
-            <!-- Menu Items -->
-            <div class="menu_inner menu_mm ">
-                <div class="menu menu_mm ">
-                    <ul class="menu_list menu_mm ">
-                        <li class="menu_item menu_mm "><a href="index.html ">Home</a></li>
-                        <li class="menu_item menu_mm "><a href="about.html ">About us</a></li>
-                        <li class="menu_item menu_mm "><a href="services.html ">Services</a></li>
-                        <li class="menu_item menu_mm "><a href="MyCare.html ">MyCare</a></li>
-                        <li class="menu_item menu_mm "><a href="contact.html ">Contact</a></li>
-                    </ul>
+            <div class="menu_inner">
+                <ul class="menu_list">
+                    <li class="menu_item"><a href="#">Home</a></li>
+                    <li class="menu_item"><a href="#">About us</a></li>
+                    <li class="menu_item"><a href="#">Services</a></li>
+                    <li class="menu_item"><a href="#">MyCare</a></li>
+                    <li class="menu_item"><a href="#">Contact</a></li>
+                </ul>
+                 <div class="menu_extra">
+                    <div class="menu_appointment"><a href="#">For more details</a></div>
+                    <div class="menu_emergencies">Call us: +256 754 898 609</div>
                 </div>
-                <div class="menu_extra ">
-                    <div class="menu_appointment "><a href="services.html ">For more</a></div>
-                    <div class="menu_emergencies ">Call us: +256 754 898 609</div>
-                </div>
-
             </div>
-
         </div>
 
         <!-- Home -->
-
-        <div class="home ">
-            <div class="home_slider_container ">
-                <!-- Home Slider -->
-                <div class="owl-carousel owl-theme home_slider ">
-
-                    <!-- Slider Item -->
-                    <div class="owl-item ">
-                        <div class="home_slider_background " style="background-image:url(images/home-about.jpg) "></div>
-                        <div class="home_content ">
-                            <div class="container ">
-                                <div class="row ">
-                                    <div class="col ">
-                                        <div class="home_content_inner ">
-                                            <!--<div class="home_title ">
-                                                <h1>
-                                                    <span style="color:#ffffff; ">Light</span> <span style="color:#2ebe3d; ">Medical</span> <span style="color:#2784ce; ">Centre
-                                                    </span></h1>
-                                            </div>
-                                            <div class="home_text ">
-                                                <p style = "color: black;" > Prompt high quality medical services offered by qualified health professionals.</p> -->
-                                            </div>
-                                            <!--<div class="button home_button ">
-                                                <a href="# ">read more</a>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="home">
+            <div class="home_slider_container">
+                <div class="owl-carousel owl-theme home_slider">
+                    <div class="owl-item">
+                        <div class="home_slider_background" style="background-image:url(images/home-about.jpg)"></div>
                     </div>
-
-                    <!-- Slider Item
-                    <div class="owl-item ">
-                        <div class="home_slider_background " style="background-image:url(images/home_background_1.png) "></div>
-                        <div class="home_content ">
-                            <div class="container ">
-                                <div class="row ">
-                                    <div class="col ">
-                                        <div class="home_content_inner ">
-                                            <div class="home_title ">
-                                                <h1><span style="color:#1c6cd6; ">High Quality</span> <span style="color:#2ebe3d; ">Care</span></h1>
-                                            </div>
-                                            <div class="home_text ">
-                                                <p>Our team is dedicated and working relentlessly to help you for all the servies you need at Light MediCare.</p>
-                                            </div>
-                                            <div class="button home_button ">
-                                                <a href="# ">read more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Slider Progress -->
-                <div class="home_slider_progress "></div>
+                </div>
             </div>
         </div>
 
-        <!-- 3 Boxes -->
-
-        <div class="boxes ">
-            <div class="container ">
-                <div class="row ">
-
-                    <!-- Box -->
-                    <div class="col-lg-4 box_col " >
-                        <div class="box working_hours " style="background-color:#ffffff;">
-                            <div class="box_icon d-flex flex-column align-items-start justify-content-center ">
-                                <div style="width:29px; height:29px; "><img src="images/stethoscope.png " alt=" "></div>
-                            </div>
-                            <div class="box_title " style="color:#1c6cd6; font-size: 32px; text-align:center;">Healthy Always</div>
-
+        <!-- Boxes -->
+        <div class="boxes">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 box_col">
+                        <div class="box working_hours text-center">
+                            <div class="box_icon mx-auto"><img src="images/stethoscope.png" alt=""></div>
+                            <div class="box_title">Healthy Always</div>
                         </div>
                     </div>
-
-                    <!-- Box -->
-                    <div class="col-lg-4 box_col ">
-                        <div class="box box_emergency" style="background-color:#ffffff;">
-                            <div class="box_icon d-flex flex-column align-items-start justify-content-center ">
-                                <div style="width: 37px; height:37px; margin-left:-4px; "><img src="images/phone-call.png " alt=" "></div>
-                            </div>
-                            <div class="box_title " style="color:#2ebe3d; font-size: 30px; text-align:center;">To apply, call</div>
-                            <div class="box_phone " style="color:#1c6cd6; font-size: 18px; text-align:center;">+256 754 898609,<br>+256 787 394119</div>
+                    <div class="col-lg-6 box_col">
+                        <div class="box box_emergency text-center">
+                            <div class="box_icon mx-auto"><img src="images/phone-call.png" alt=""></div>
+                            <div class="box_title">To apply, call</div>
+                            <div class="box_phone">+256 754 898609</div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
 
         <!-- About -->
-
-        <div class="about ">
-            <div class="container ">
-                <div class="row row-lg-eq-height ">
-
-                    <!-- About Content -->
-                    <div class="col-lg-7 ">
-                        <div class="about_content ">
-                            <div class="section_title ">
+        <div class="about">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <div class="about_content">
+                            <div class="section_title">
                                 <h2>Who We Are</h2>
                             </div>
-                            <div class="about_text ">
+                            <div class="about_text">
                                 <p>Blue Baasa is a healthcare financing company that aims to improve access to healthcare at anytime and from anywhere. We empower financially undeserved people in rural and urban communities with innovative individual, family, and community financing solutions to overcome their financial barriers and pave the way for a healthier world.</p>
                             </div>
-                            <div class="button about_button ">
-                                <a href="about.html ">Read more</a>
+                            <div class="button about_button">
+                                <a href="about.html">Read more</a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- About Image -->
-                    <div class="col-lg-5 ">
-                        <div class="about_image "><img src="images/home-about.jpg " alt=" "></div>
+                    <div class="col-lg-5">
+                        <div class="about_image">
+                            <img src="images/home-about.jpg" alt="About us image" class="img-fluid rounded shadow">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Departments -->
-
-        <div class="departments " style="background-color: #1c6cd6; ">
-            <!-- <div class="departments_background parallax-window " data-parallax="scroll " data-image-src="images/departments.jpg " data-speed="0.8 "></div> -->
-            <div class="container ">
-                <div class="row ">
-                    <div class="col ">
-                        <div class="section_title section_title_light ">
+        <div class="departments">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="section_title section_title_light">
                             <h2>A Deserving Life & Right to:</h2>
                         </div>
                     </div>
                 </div>
-                <div class="row departments_row row-md-eq-height ">
-
-                    <!-- Growing Communities -->
-                    <div class="col-lg-3 col-md-6 dept_col ">
-                        <div class="dept ">
-                            <div class="dept_image "><img src="images/growing-communities.jpg " alt=" "></div>
-                            <div class="dept_content text-center ">
-                                <div class="dept_title ">Growing Communities</div>
-                                <div class="dept_subtitle ">By challenging people to be more financially productive, we pave the way for stable and growing Communities where healthcare is never a worry, but a deserved human right.</div>
+                <div class="row departments_row">
+                    <div class="col-lg-3 col-md-6 dept_col mb-4">
+                        <div class="dept">
+                            <div class="dept_image"><img src="images/growing-communities.jpg" alt="" class="img-fluid"></div>
+                            <div class="dept_content text-center">
+                                <div class="dept_title">Growing Communities</div>
+                                <div class="dept_subtitle">Paving the way for stable and growing communities.</div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Peace, Joy, & Hope -->
-                    <div class="col-lg-3 col-md-6 dept_col ">
-                        <div class="dept ">
-                            <div class="dept_image "><img src="images/accomodation.jpeg " alt=" "></div>
-                            <div class="dept_content text-center ">
-                                <div class="dept_title ">Peace, Joy & Hope</div>
-                                <div class="dept_subtitle ">A healthy family finds peace, joy and hope as accomodation is none of their worries amidst many challenges.</div>
+                    <div class="col-lg-3 col-md-6 dept_col mb-4">
+                        <div class="dept">
+                            <div class="dept_image"><img src="images/accomodation.jpeg" alt="" class="img-fluid"></div>
+                            <div class="dept_content text-center">
+                                <div class="dept_title">Peace, Joy & Hope</div>
+                                <div class="dept_subtitle">A healthy family finds peace, joy and hope.</div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Department -->
-                    <div class="col-lg-3 col-md-6 dept_col ">
-                        <div class="dept ">
-                            <div class="dept_image "><img src="images/always-healthy.jpg " alt=" "></div>
-                            <div class="dept_content text-center ">
-                                <div class="dept_title ">Be Always Healthy</div>
-                                <div class="dept_subtitle ">Whether it's an appointment, inpatient, or expensive surgery, everyone must live healthy always regardless of the current financial barriers.</div>
+                    <div class="col-lg-3 col-md-6 dept_col mb-4">
+                        <div class="dept">
+                            <div class="dept_image"><img src="images/always-healthy.jpg" alt="" class="img-fluid"></div>
+                            <div class="dept_content text-center">
+                                <div class="dept_title">Be Always Healthy</div>
+                                <div class="dept_subtitle">Live healthy regardless of financial barriers.</div>
                             </div>
                         </div>
                     </div>
-					<!-- Department -->
-                    <div class="col-lg-3 col-md-6 dept_col ">
-                        <div class="dept ">
-                            <div class="dept_image "><img src="images/shop.jpg " alt=" "></div>
-                            <div class="dept_content text-center ">
-                                <div class="dept_title ">Freedom of Choice</div>
-                                <div class="dept_subtitle ">To have the freedom to choose what to eat, put on, or study is what a healthy individual is, not the mere absence of disease.</div>
+                    <div class="col-lg-3 col-md-6 dept_col mb-4">
+                        <div class="dept">
+                            <div class="dept_image"><img src="images/shop.jpg" alt="" class="img-fluid"></div>
+                            <div class="dept_content text-center">
+                                <div class="dept_title">Freedom of Choice</div>
+                                <div class="dept_subtitle">The freedom to choose is true health.</div>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Department -->
-                    <div class="col-lg-3 col-md-6 dept_col ">
-                        <div class="dept ">
-                            <div class="dept_text ">
-                                <p>Our team is dedicated to help you in your journey to ensuring you're healthy always. Changing lives is all we do - 24/7.</p>
-                            </div>
-                            <div class="button dept_button "><a href="services.html ">read more</a></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        
         <!-- Services -->
-
-        <div class="services ">
-            <div class="container ">
-                <div class="row ">
-                    <div class="col ">
-                        <div class="section_title ">
+        <div class="services">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="section_title">
                             <h2>How it works</h2>
                         </div>
                     </div>
                 </div>
-                <div class="row services_row ">
-
-                    <!-- Service -->
-                    <div class="col-lg-4 col-md-6 service_col ">
-                        <a href="services.html ">
-                            <div class="service text-center trans_200 ">
-                                <div class="service_icon "><img class="svg " src="images/register.png " alt=" "></div>
-                                <div class="service_title trans_200 ">Register for a token</div>
-                                <div class="service_text ">
-                                    <p>At Blue Baasa, we make it simple and straightforward for you to access healthcare financing when you need it most. To register for a token, give us a call or stop by at our office.Once registered, you'll receive a token that represents your approved credit limit, allowing you to access medical services without the immediate worry of payment. This token is your gateway to stress-free healthcare financing, tailored to your needs and circumstances.</p>
+                <div class="row services_row">
+                    <div class="col-lg-4 col-md-6 service_col">
+                        <a href="services.html">
+                            <div class="service text-center trans_200">
+                                <div class="service_icon"><img class="svg" src="images/register.png" alt=""></div>
+                                <div class="service_title trans_200">Register for a token</div>
+                                <div class="service_text">
+                                    <p>Simple and straightforward access to financing. Call us or visit our office to register and receive a token representing your approved credit limit.</p>
                                 </div>
                             </div>
                         </a>
                     </div>
-
-                    <!-- Service -->
-                    <div class="col-lg-4 col-md-6 service_col ">
-                        <a href="services.html ">
-                            <div class="service text-center trans_200 ">
-                                <div class="service_icon "><img class="svg " src="images/token.png " alt=" "></div>
-                                <div class="service_title trans_200 ">Use token with any merchant</div>
-                                <div class="service_text ">
-                                    <p>Using your Blue Baasa token is easy and convenient. We have partnered with a wide network of reputable healthcare providers, ensuring that you can use your token at numerous clinics, hospitals, and pharmacies around you. When you need to access medical services, simply present your token at any of our participating merchants. The merchant will verify your token and provide the necessary healthcare services, whether it's a routine check-up, emergency treatment, or medication. Our seamless system ensures that you receive the care you need without any delay, bringing peace of mind and health security to you and your loved ones.</p>
+                    <div class="col-lg-4 col-md-6 service_col">
+                        <a href="services.html">
+                            <div class="service text-center trans_200">
+                                <div class="service_icon"><img class="svg" src="images/token.png" alt=""></div>
+                                <div class="service_title trans_200">Use token with any merchant</div>
+                                <div class="service_text">
+                                    <p>Present your token at our wide network of partner clinics, hospitals, and pharmacies to receive care without delay. We handle the payment verification seamlessly.</p>
                                 </div>
                             </div>
                         </a>
                     </div>
-
-                    <!-- Service -->
-                    <div class="col-lg-4 col-md-6 service_col ">
-                        <a href="services.html ">
-                            <div class="service text-center trans_200 ">
-                                <div class="service_icon "><img class="svg " src="images/pay.jpg " alt=" "></div>
-                                <div class="service_title trans_200 ">Pay any time</div>
-                                <div class="service_text ">
-                                    <p>Flexibility is at the heart of our service. With Blue Baasa, you can repay your healthcare expenses at a time that suits you best. After receiving medical services using your token, you'll be able to settle your bill through manageable installments, according to the terms agreed upon during registration. Payments can be made easily through various channels, including mobile money, bank transfers, or at our offices. This flexible repayment plan ensures that you can manage your finances effectively, prioritizing your health without the stress of immediate payment. By choosing Blue Baasa, you invest in a healthier future with the confidence that your financial well-being is always considered.</p>
+                    <div class="col-lg-4 col-md-6 service_col">
+                        <a href="services.html">
+                            <div class="service text-center trans_200">
+                                <div class="service_icon"><img class="svg" src="images/pay.jpg" alt=""></div>
+                                <div class="service_title trans_200">Pay any time</div>
+                                <div class="service_text">
+                                    <p>Flexibility is key. Settle your bill through manageable installments. Repay via mobile money, bank transfers, or at our offices.</p>
                                 </div>
                             </div>
                         </a>
                     </div>
-
                 </div>
             </div>
         </div>
 
         <!-- Footer -->
-
-        <footer class="footer ">
-            <div class="footer_container ">
-                <div class="container ">
-                    <div class="row ">
-
-                        <!-- Footer - About -->
-                        <div class="col-lg-4 footer_col ">
-                            <div class="footer_about ">
-                                <div class="footer_logo_container ">
-                                    <a href="# " class="d-flex flex-column align-items-center justify-content-center ">
-                                        <div class="logo_content ">
-                                            <div><img src="images/favicon.png" alt="logo" width="80px"></div>
-                                          
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="footer_about_text ">
-                                    <p>Our team is dedicated and working relentlessly to help you for all the servies you need at Blue Baasa. Changing lives is all we do - 24/7.</p>
-                                </div>
-                                <ul class="footer_about_list ">
-                                    <li>
-                                        <div class="footer_about_icon "><img src="images/phone-call.svg " alt=" "></div><span>+256 754 898 609</span></li>
-                                    <li>
-                                        <div class="footer_about_icon "><img src="images/envelope.svg " alt=" "></div><span>info@bluebaasa.com</span></li>
-                                    <li>
-                                        <div class="footer_about_icon "><img src="images/placeholder.svg " alt=" "></div><span> Banda, Kampala - Uganda</span></li>
-                                </ul>
+        <footer class="footer">
+            <div class="footer_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 footer_col">
+                            <div class="footer_logo_container mb-4">
+                               <img src="images/favicon.png" alt="logo">
+                            </div>
+                            <div class="footer_about_text">
+                                <p>Changing lives is all we do - 24/7.</p>
                             </div>
                         </div>
-
-                        <!-- Footer - Links -->
-                        <div class="col-lg-4 footer_col ">
-                            <div class="footer_links footer_column ">
-                                <div class="footer_title ">Useful Links</div>
-                                <ul>
-                                    <li><a href="# ">FAQ</a></li>
+                        <div class="col-lg-4 footer_col">
+                            <div class="footer_title">Contact Info</div>
+                            <ul class="footer_about_list list-unstyled">
+                                <li>
+                                    <div class="footer_about_icon"><img src="images/phone-call.svg" alt=""></div>
+                                    <span>+256 754 898 609</span>
+                                </li>
+                                <li>
+                                    <div class="footer_about_icon"><img src="images/envelope.svg" alt=""></div>
+                                    <span>info@bluebaasa.com</span>
+                                </li>
+                                <li>
+                                    <div class="footer_about_icon"><img src="images/placeholder.svg" alt=""></div>
+                                    <span>Banda, Kampala - Uganda</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 footer_col">
+                           <div class="footer_title">Useful Links</div>
+                            <div class="footer_links">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">FAQ</a></li>
                                     <li><a href="services.html">Services</a></li>
                                     <li><a href="about.html">About us</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </div>
-                        </div>
-
-                        <!-- Footer - News -->
-                        <div class="col-lg-4 footer_col ">
-                            <div class="footer_news footer_column ">
+                            <div class="footer_social mt-4">
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="copyright ">
-                <div class="container ">
-                    <div class="row ">
-                        <div class="col ">
-                            <div class="copyright_content d-flex flex-lg-row flex-column align-items-lg-center justify-content-start ">
-                                <div class="cr ">
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                    Copyright &copy;
-                                    <script>
-                                        document.write(new Date().getFullYear());
-                                    </script> All rights reserved | Blue Baasa Financial Services (U) Ltd.
-                                </div>
-                                <div class="footer_social ml-lg-auto ">
-                                    <ul>
-
-                                        <li><a href="# "><i class="fa fa-facebook " aria-hidden="true "></i></a></li>
-                                        <li><a href="# "><i class="fa fa-twitter " aria-hidden="true "></i></a></li>
-                                    </ul>
-                                </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="copyright_content text-center">
+                                Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Blue Baasa Financial Services (U) Ltd.
                             </div>
                         </div>
                     </div>
@@ -457,13 +887,51 @@
         </footer>
     </div>
 
-    <script src="js/jquery-3.2.1.min.js "></script>
-    <script src="styles/bootstrap4/popper.js "></script>
-    <script src="styles/bootstrap4/bootstrap.min.js "></script>
-    <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js "></script>
-    <script src="plugins/easing/easing.js "></script>
-    <script src="plugins/parallax-js-master/parallax.min.js "></script>
-    <script src="js/custom.js "></script>
+    <!-- JS Libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        $(document).ready(function(){
+            // Header Scroll
+            $(window).on('scroll', function() {
+                if ($(window).scrollTop() > 100) {
+                    $('.header').addClass('scrolled');
+                } else {
+                    $('.header').removeClass('scrolled');
+                }
+            });
+
+            // Owl Carousel
+            if($('.home_slider').length) {
+                $('.home_slider').owlCarousel({
+                    items: 1,
+                    loop: true,
+                    autoplay: true,
+                    nav: false,
+                    dots: false,
+                    autoplayTimeout: 5000,
+                    smartSpeed: 1200,
+                    animateOut: 'fadeOut'
+                });
+            }
+
+            // Mobile Menu
+            if($('.hamburger').length) {
+                $('.hamburger').on('click', function() {
+                    $('.menu_container').toggleClass('active');
+                });
+            }
+            if($('.menu_close_container').length) {
+                $('.menu_close_container').on('click', function() {
+                    $('.menu_container').removeClass('active');
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
